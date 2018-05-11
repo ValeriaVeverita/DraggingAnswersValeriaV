@@ -2,27 +2,20 @@
 --
 -- game_level1.lua
 -- Created by: Daniel
--- Date: Nov. 22nd, 2014
+-- Edited by : Valeria
+-- Date: May 7, 2018
 -- Description: This is the level 1 screen of the game.
 -----------------------------------------------------------------------------------------
-
-
 -- Use Composer Library
 local composer = require( "composer" )
-
 -----------------------------------------------------------------------------------------
-
 -- Use Widget Library
 local widget = require( "widget" )
-
 -----------------------------------------------------------------------------------------
-
 -- Naming Scene
 sceneName = "level1_screen"
-
 -- Creating Scene Object
 local scene = composer.newScene( sceneName )
-
 -----------------------------------------------------------------------------------------
 -- LOCAL VARIABLES
 -----------------------------------------------------------------------------------------
@@ -130,10 +123,10 @@ local function DetermineAlternateAnswers()
 -- RESET ALL X POSITIONS OF ANSWER BOXES (because the x-position is changed when it is
 -- placed into the black box)
 -----------------------------------------------------------------------------------------
-    answerbox.x = display.contentWidth * 0.9
-    alternateAnswerBox1.x = display.contentWidth * 0.9
-    alternateAnswerBox2.x = display.contentWidth * 0.9
-    alternateAnswerBox3.x = display.contentWidth * 0.9
+    answerbox.x = display.contentWidth/7
+    alternateAnswerBox1.x = display.contentWidth /7
+    alternateAnswerBox2.x = display.contentWidth /7
+    alternateAnswerBox3.x = display.contentWidth /7
 
 
 end
@@ -494,7 +487,7 @@ function scene:create( event )
 
     --the text that displays the question
     questionText = display.newText( "" , 0, 0, native.systemFontBold, 120)
-    questionText.x = display.contentWidth * 0.3
+    questionText.x = display.contentWidth * 0.65
     questionText.y = display.contentHeight * 0.9
 
     -- create the soccer ball and place it on the scene
@@ -509,21 +502,21 @@ function scene:create( event )
     alternateAnswerBox3AlreadyTouched = false
 
     --create answerbox alternate answers and the boxes to show them
-    answerbox = display.newText("", display.contentWidth * 0.9, 0, native.systemFontBold, 110)
-    alternateAnswerBox1 = display.newText("", display.contentWidth * 0.9, 0, native.systemFontBold, 110)
-    alternateAnswerBox2 = display.newText("", display.contentWidth * 0.9, 0, native.systemFontBold, 110)
-    alternateAnswerBox3 = display.newText("", display.contentWidth * 0.9, 0, native.systemFontBold, 110)
+    answerbox = display.newText("", display.contentWidth /7, 0, native.systemFontBold, 110)
+    alternateAnswerBox1 = display.newText("", display.contentWidth /7, 0, native.systemFontBold, 110)
+    alternateAnswerBox2 = display.newText("", display.contentWidth /7, 0, native.systemFontBold, 110)
+    alternateAnswerBox3 = display.newText("", display.contentWidth /7, 0, native.systemFontBold, 110)
 
     -- set the x positions of each of the answer boxes
-    answerboxPreviousX = display.contentWidth * 0.9
-    alternateAnswerBox1PreviousX = display.contentWidth * 0.9
-    alternateAnswerBox2PreviousX = display.contentWidth * 0.9
-    alternateAnswerBox3PreviousX = display.contentWidth * 0.9
+    answerboxPreviousX = display.contentWidth /7
+    alternateAnswerBox1PreviousX = display.contentWidth /7
+    alternateAnswerBox2PreviousX = display.contentWidth /7
+    alternateAnswerBox3PreviousX = display.contentWidth /7
 
 
     -- the black box where the user will drag the answer
     userAnswerBoxPlaceholder = display.newImageRect("Images/userAnswerBoxPlaceholder.png",  130, 130, 0, 0)
-    userAnswerBoxPlaceholder.x = display.contentWidth * 0.6
+    userAnswerBoxPlaceholder.x = display.contentWidth * 0.9
     userAnswerBoxPlaceholder.y = display.contentHeight * 0.9
     
     -----------------------------------------------------------------------------------------------------------
